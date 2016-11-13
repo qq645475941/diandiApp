@@ -1,0 +1,52 @@
+<ion-header-bar>
+  <div>
+    <div class="btn-back" onclick="history.back()"><</div>
+  </div>
+</ion-header-bar>
+<ion-content>
+  <div>
+  <div class="hot-new-com">热门跟帖</div>
+  <div style="position: relative">
+    <div class="com-container" ng-repeat="item in commentIds">
+      <div class="commentPhoto">
+        <img ng-src={{comments[item[0]].user.avatar||"img/ionic.png"}}>
+      </div>
+      <div class="com-item ">
+        <div class="com-user">
+          <div class="user-info">
+            <div class="user">
+              <a>{{comments[item[0]].user.nickname||"火星网友"}}</a>
+              <p> {{comments[item[0]].user.location}}</p>
+            </div>
+            <div class="vote"><p>{{comments[item[0]].vote+'顶'}}</p></div>
+          </div>
+        </div>
+        <!--评论中间楼层模板-->
+        <!----------------------------------------------------------------------------->
+        <div more-comment data=item class="com-floor">
+          <div class="com-user">
+            <div class="user-info">
+              <div class="user">
+                <span class="floor-num">{{idx}}</span>
+                <a>{{comments[comId].user.nickname||"火星网友"}}</a>
+                <p style="margin-left: 0.45rem"> {{comments[comId].user.location}}</p>
+              </div>
+              <div class="vote"><p>{{comments[comId].vote+'顶'}}</p></div>
+            </div>
+          </div>
+          <div class="com-content">{{comments[comId].content}}</div>
+        </div>
+        <!---------------------------------------------------------------------------->
+        <div class="com-content">{{comments[item[0]].content}}</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</ion-content>
+<ion-footer-bar>
+  <div class=" item-input-inset com-input">
+    <i class="icon ion-edit placeholder-icon"></i>
+    <input type="text" placeholder="写跟贴">
+    <span>发送</span>
+  </div>
+</ion-footer-bar>

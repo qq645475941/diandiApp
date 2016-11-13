@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>点滴新闻</title>
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
+  <script src="lib/jquery-3.1.1.js"></script>
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/service/service.js"></script>
+  <script src="js/directive/navBar.js"></script>
+  <script src="js/directive/navListCard.js"></script>
+  <script src="js/directive/moreComment.js"></script>
+</head>
+
+<body ng-app="starter">
+
+<ion-nav-view name="home">
+
+</ion-nav-view>
+</body>
+<script>
+  var dpr = window.devicePixelRatio;
+  document.documentElement.style.fontSize = window.innerWidth / 10 + 'px';
+  var meta = document.querySelector('meta');
+  meta.setAttribute('content', 'initial-scale=' + 1 / dpr + ', maximum-scale=' + 1 / dpr + ', minimum-scale=' + 1 / dpr + ', user-scalable=no');
+</script>
+</html>

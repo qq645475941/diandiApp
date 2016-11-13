@@ -1,0 +1,17 @@
+
+.list-source {
+  font-size: pxToRem(36px);
+  color: #989898;
+  display: flex;
+  justify-content: space-between;
+}
+.list-source span {
+  margin-top: pxToRem(48px);
+}
+.img-lunbo{
+  min-height: 150px;
+  img{
+    width: 100px;
+    height: 100px;
+  }
+}

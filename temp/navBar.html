@@ -1,0 +1,32 @@
+<div class="nav-bar-container">
+  <ion-scroll direction="x" scrollbar-x='false' style="  background-color: white;">
+    <ul class="navBar">
+      <li class="item-bar">
+        <span ui-sref="list({id:dujia.tid})">{{dujia.tname}}</span>
+      </li>
+      <li class="item-bar" ng-repeat="item in items">
+        <span ui-sref="list({id:item.tid})">{{item.tname}}</span>
+      </li>
+    </ul>
+  </ion-scroll>
+
+  <div class="buttons nav-add" nav-card>
+    <span class="add-close"><i class="ion-plus"></i></span>
+  </div>
+  <ion-scroll class="topicPage">
+    <li >
+      <span >{{dujia.tname}}</span>
+    </li>
+    <li ng-repeat="item in items" data-topicIdx="{{$index}}">
+      <span >{{item.tname}}</span>
+      <i class="close-circled ion-close-circled"></i>
+    </li>
+    <div>点击添加更多</div>
+    <div class="remain">
+      <li ng-repeat="item in remainNav" data-topicIdx="{{$index}}">
+        <span >{{item.tname}}</span>
+      </li>
+    </div>
+
+  </ion-scroll>
+</div>

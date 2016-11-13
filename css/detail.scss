@@ -1,0 +1,118 @@
+.btn-back {
+  display: inline-block;
+  width: pxToRem(94px);
+  height: pxToRem(94px);
+  border: pxToRem(6px) solid #d1d1d1;
+  border-radius: 50%;
+  font-size: pxToRem(75px);
+  color: #d1d1d1;
+  text-align: center;
+  margin: pxToRem(10px) pxToRem(30px);
+}
+.replyCount {
+  display: inline-block;
+  //width: pxToRem(180px);
+  height: pxToRem(72px);
+  border-radius: pxToRem(36px);
+  position: absolute;
+  right: pxToRem(30px);
+  background-color: #cd3738;
+  margin: pxToRem(16px) 0;
+  span {
+    color: #ffffff;
+    margin: 0 pxToRem(20px);
+    line-height: pxToRem(72px);
+  }
+
+}
+.my-detail{
+  padding: 0 pxToRem(40px);
+  margin-bottom: pxToRem(40px);
+  .detail-title{
+    font-size: pxToRem(70px);
+    margin: pxToRem(70px) 0 pxToRem(60px);
+  }
+  .detail-source{
+    font-size: pxToRem(36px);
+    color: #989898;
+    margin: pxToRem(40px) 0;
+
+  }
+  .detail-html{
+    font-size: pxToRem(55px);
+    img{
+      width: pxToRem(1180px)
+    }
+  }
+  .detail-ec{
+    font-size: pxToRem(36px);
+    position: absolute;
+    right: 0;
+    color: #989898
+  }
+}
+.detail-relative_sys {
+  margin-top: pxToRem(140px);
+  .relative_sys {
+    color: #ff7972;
+    border-bottom: 0.5px solid lightgray;
+  }
+}
+
+.commentsBox {
+  border: 2px solid lightgray;
+  border-radius: 5px;
+}
+.commentItem {
+  padding: pxToRem(30px) pxToRem(60px) pxToRem(6px);
+  width: 95%;
+  border-bottom: 1px solid lightgray;
+}
+
+.commentPhoto img {
+  margin-top: pxToRem(30px);
+  margin-left: pxToRem(30px);
+  width: pxToRem(90px);
+  height: pxToRem(90px);
+  border-radius: 50%;
+}
+
+.flex {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.comment-user{
+  a{
+    color: #5191d2;
+    font-size: pxToRem(42px);
+  }
+  p{
+    display: block;
+    color: #828282;
+    font-size: pxToRem(30px);
+    margin: pxToRem(30px) 0;
+  }
+}
+.comment-content{
+  font-size: pxToRem(51px);
+}
+
+.vote {
+  position: absolute;
+  right: 3px;
+}
+.watchMore {
+  font-size: pxToRem(42px);
+  color:#5191d2 ;
+  height: pxToRem(150px);
+  line-height: pxToRem(150px);
+  text-align: center;
+}
+.com-input {
+  input {
+    width: 7.5rem;
+    border-bottom: 1px solid #edeff3;
+  }
+}

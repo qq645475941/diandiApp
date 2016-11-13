@@ -1,0 +1,9 @@
+$baseFontSize: 41.4px;
+@function pxToRem($px) {
+  @return $px /  $baseFontSize * 1rem /3;
+}
+@import "reset.css";
+@import "navBar";
+@import "newList";
+@import "detail";
+@import "comment";

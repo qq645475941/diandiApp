@@ -1,0 +1,88 @@
+<ion-header-bar>
+  <div>
+    <div class="btn-back" onclick="history.back()"><</div>
+  </div>
+
+  <div class="replyCount">
+    <span ui-sref="comment({id:id})">{{news.replyCount+'跟帖'}}</span>
+  </div>
+</ion-header-bar>
+<ion-content  direction="y">
+  <div class="my-detail">
+    <div class="detail-title"><b>{{news.title}}</b></div>
+    <div class="detail-source">
+      <div style="border-bottom: 1px dashed #989898">
+        <span>{{news.source}}</span>
+        &nbsp;&nbsp;<span>{{news.ptime}}</span>
+      </div>
+      <div style="padding: 5px 10px">
+        <p>{{news.digest}}</p>
+      </div>
+    </div>
+    <div class="detail-html" ng-bind-html="htmlBody"></div><br>
+    <span class="detail-ec">{{'【 责任编辑:'+ news.ec+'】'}} </span>
+  </div>
+  <div class="detail-relative_sys commentsBox">
+    <div class="relative_sys">
+      <p>热门跟帖</p>
+    </div>
+    <div class="flex" ng-repeat="item in hostcomment track by $index">
+      <div class="commentPhoto">
+        <img ng-src="{{item.user.avatar||'img/ionic.png'}}" alt="">
+      </div>
+      <div class="commentItem">
+        <div class="flex">
+          <div class="comment-user">
+            <a>
+              {{item.user.nickname||'火星网友'}}
+            </a>
+            <p>
+              {{item.user.location}}
+            </p>
+          </div>
+          <div class="vote">
+            <p>{{item.vote+'顶'}}</p>
+          </div>
+        </div>
+        <div class="comment-content">
+          {{item.content}}
+        </div>
+      </div>
+    </div>
+    <div class="watchMore">
+      <a ui-sref="comment({id:id})">查看更多跟帖</a>
+    </div>
+  </div>
+  <div data-style="border" class="detail-relative_sys">
+    <div class="relative_sys">
+      <p>相关新闻</p>
+    </div>
+    <div>
+      <div ng-repeat="itme in news.huati">
+        <a>#{{itme.topicName}}#</a>
+      </div>
+
+      <ion-item ng-repeat="item in news.relative_sys"
+                class="item-thumbnail-left" ui-sref="detail({id:item.id})">
+        <img ng-src="{{item.imgsrc}}">
+        <h2 style="white-space: normal">{{item.title}}</h2>
+        <div class="list-source">
+          <span>{{item.source}}</span>
+          <span>{{item.ptime}}</span>
+        </div>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>
+<ion-footer-bar>
+  <div class=" item-input-inset com-input">
+    <i class="icon ion-edit placeholder-icon"></i>
+    <input type="text" placeholder="写跟贴">
+    <span class="assertive" ui-sref="comment({id:id})">
+        <i class="ion-android-textsms "></i>
+        <span> {{news.replyCount}}</span>
+    </span>
+  </div>
+</ion-footer-bar>
+
+

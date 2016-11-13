@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-refresher
+    pulling-text="下拉刷新..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+  <ion-list
+    show-delete="shouldShowDelete"
+    show-reorder="shouldShowReorder"
+    can-swipe="listCanSwipe">
+    <div ng-repeat="item in items">
+    <!--  <div class="img-lunbo" ng-if="item.skipType">
+        <div ng-repeat="img in item.imgextra">
+          <img ng-src="{{img.imgsrc}}">
+        </div>
+        <img ng-src="item.imgsrc" alt="">
+      </div>-->
+    <!--  <ion-item class="item-thumbnail-left" ui-sref="detail({id:item.postid})" ng-if=" !item.skipType">-->
+     <ion-item class="item-thumbnail-left" ui-sref="detail({id:item.postid})" ng-if=" !item.skipType">
+        <img ng-src="{{item.imgsrc}}">
+        <h2 style="white-space: normal">{{item.title}}</h2>
+        <div class="list-source">
+          <span>{{item.source}}</span>
+          <span>{{item.replyCount}}  跟帖</span>
+        </div>
+      </ion-item>
+    </div>
+  </ion-list>
+  <ion-infinite-scroll
+    on-infinite="loadMore()"
+    distance="1%">
+  </ion-infinite-scroll>
+</ion-content>
